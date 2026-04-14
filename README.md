@@ -26,7 +26,6 @@ A full-stack web application to manage student records using Flask and MySQL, de
 * **Docker:** Containerized Flask application
 * **Jenkins:** Automated CI/CD pipeline
 * **AWS EC2:** Cloud deployment
-* **Boto3:** Automated EC2 instance creation using Python
 
 ---
 
