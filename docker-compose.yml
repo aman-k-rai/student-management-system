@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: sql123
+      MYSQL_DATABASE: studentdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./studentdb.sql:/docker-entrypoint-initdb.d/studentdb.sql
+
+  flask:
+    build: .
+    container_name: student-app
+    environment:
+      MYSQL_ROOT_PASSWORD: sql123
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
