@@ -10,7 +10,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - ./studentdb.sql:/docker-entrypoint-initdb.d/studentdb.sql
+      - ./db/studentdb.sql:/docker-entrypoint-initdb.d/studentdb.sql
 
   flask:
     build: .
