@@ -48,7 +48,7 @@ docker run -d -p 5000:5000 student-app
 
 ## ☁️ AWS Deployment
 
-* EC2 instance created using Boto3
+* EC2 instance created 
 * Application deployed inside Docker container on EC2
 
 ---
