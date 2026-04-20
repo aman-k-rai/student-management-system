@@ -13,7 +13,7 @@ services:
       - ./db/studentdb.sql:/docker-entrypoint-initdb.d/studentdb.sql
 
   flask:
-    build: .
+    image: amanrai3011/student-management-app:latest
     container_name: student-app
     environment:
       MYSQL_ROOT_PASSWORD: sql123
