@@ -6,3 +6,8 @@ CREATE TABLE IF NOT EXISTS students (
     age INT,
     grade VARCHAR(10)
 );
+
+INSERT INTO students (name, age, grade) VALUES
+('Aman', 22, 'A')
+('Somya', 22, 'F')
+('Raj', 24, 'B' )
