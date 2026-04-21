@@ -48,7 +48,7 @@ This project follows an automated CI/CD workflow:
 
 ## 🏗 Architecture Diagram
 
-![CI/CD Architecture](docs/Architecture.drwaio.png)
+![CI/CD Architecture](docs/Architecture.png)
 
 ---
 
@@ -88,7 +88,7 @@ Pipeline stages:
 
 CI/CD pipeline showing build, push, and deployment stages executed successfully.
 
-![Jenkins Pipeline](docs/jenkins-pipeline.png)
+![Jenkins Pipeline](docs/Jenkins-pipeline.png)
 
 ---
 
