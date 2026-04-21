@@ -1,31 +1,54 @@
 # 🎓 Student Management System
 
-A full-stack web application to manage student records using Flask and MySQL, deployed using modern DevOps tools.
+A full-stack web application to manage student records, built using Flask and MySQL, and deployed with a complete CI/CD pipeline using Docker, Jenkins, and AWS.
 
 ---
 
 ## 🚀 Features
 
-* Add student details
-* Update student records
-* Delete students
+* Add new student records
 * View all students
+* Update student details
+* Delete student records
 
 ---
 
 ## 🛠 Tech Stack
 
-* **Backend:** Flask (Python)
-* **Frontend:** HTML, CSS
-* **Database:** MySQL
+**Frontend:** HTML, CSS
+**Backend:** Flask (Python)
+**Database:** MySQL
+
+**DevOps Tools:**
+
+* Docker (Containerization)
+* Jenkins (CI/CD Automation)
+* GitHub (Version Control)
+* AWS EC2 (Cloud Deployment)
+* ngrok (Webhook tunneling)
 
 ---
 
-## ⚙️ DevOps & Deployment
+## 🔄 CI/CD Pipeline Overview
 
-* **Docker:** Containerized Flask application
-* **Jenkins:** Automated CI/CD pipeline
-* **AWS EC2:** Cloud deployment
+This project follows an automated CI/CD workflow:
+
+1. Developer pushes code to GitHub
+2. GitHub triggers webhook
+3. ngrok forwards request to Jenkins
+4. Jenkins pipeline executes:
+
+   * Checkout code
+   * Build Docker image
+   * Push image to Docker Hub
+   * Deploy to AWS EC2
+5. EC2 pulls image and runs containers using Docker Compose
+
+---
+
+## 🏗 Architecture Diagram
+
+![CI/CD Architecture](architecture.png)
 
 ---
 
@@ -38,29 +61,33 @@ docker run -d -p 5000:5000 student-app
 
 ---
 
+## ☁️ Deployment (AWS EC2)
+
+* EC2 instance configured with Docker
+* Application deployed using Docker Compose
+* Flask + MySQL containers run on EC2
+
+---
+
 ## ⚙️ Jenkins Pipeline
 
-* Pulls code from GitHub
-* Builds Docker image
-* Runs container automatically
+Pipeline stages:
+
+* Checkout code from GitHub
+* Build Docker image
+* Push image to Docker Hub
+* Deploy application on EC2
 
 ---
 
-## ☁️ AWS Deployment
-
-* EC2 instance created 
-* Application deployed inside Docker container on EC2
-
----
-
-## ▶️ Local Setup (Without Docker)
+## 💻 Local Setup (Without Docker)
 
 ```bash
 git clone https://github.com/your-username/student-management-system.git
 cd student-management-system
 
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate   # Windows
 
 pip install -r requirements.txt
 python app/app.py
@@ -68,6 +95,15 @@ python app/app.py
 
 ---
 
-## 📌 Author
+## 📌 Future Improvements
 
-Aman Kumar Rai
+* Add authentication (login system)
+* Implement REST APIs
+* Add frontend framework (React)
+* Improve UI/UX design
+
+---
+
+## 👨‍💻 Author
+
+**Aman Kumar Rai**
