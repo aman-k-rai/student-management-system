@@ -48,7 +48,7 @@ This project follows an automated CI/CD workflow:
 
 ## 🏗 Architecture Diagram
 
-![CI/CD Architecture](architecture.png)
+![CI/CD Architecture](docs/Architecture.drwaio.png)
 
 ---
 
@@ -67,6 +67,12 @@ docker run -d -p 5000:5000 student-app
 * Application deployed using Docker Compose
 * Flask + MySQL containers run on EC2
 
+## 📸 Application Preview
+
+User interface of the Student Management System running inside a Docker container.
+
+![Application](docs/app-ui.png)
+
 ---
 
 ## ⚙️ Jenkins Pipeline
@@ -77,6 +83,12 @@ Pipeline stages:
 * Build Docker image
 * Push image to Docker Hub
 * Deploy application on EC2
+
+## ⚙️ Jenkins Pipeline Execution
+
+CI/CD pipeline showing build, push, and deployment stages executed successfully.
+
+![Jenkins Pipeline](docs/jenkins-pipeline.png)
 
 ---
 
@@ -97,10 +109,10 @@ python app/app.py
 
 ## 📌 Future Improvements
 
-* Add authentication (login system)
-* Implement REST APIs
-* Add frontend framework (React)
-* Improve UI/UX design
+* ## 📌 Future Improvements
+- Infrastructure provisioning using Terraform  
+- Observability with Prometheus and Grafana  
+- Image versioning and rollback strategy  
 
 ---
 
