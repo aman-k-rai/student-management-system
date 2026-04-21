@@ -1,0 +1,57 @@
+pipeline {
+    agent { label 'manager' }
+
+    environment {
+        IMAGE = "amanrai3011/student-management-app:${BUILD_NUMBER}"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/aman-k-rai/student-management-system.git'
+            }
+        }
+
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t student-app .'
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'docker-creds',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+                    sh '''
+                    echo $PASS | docker login -u $USER --password-stdin
+                    docker tag student-app $IMAGE
+                    docker push $IMAGE
+                    '''
+                }
+            }
+        }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                sh '''
+                docker-compose down || true
+                docker-compose pull
+                docker-compose up -d
+                '''
+            }
+        }
+
+        stage('Test Deployment') {
+            steps {
+                sh '''
+                sleep 10
+                curl -f http://localhost:5000
+                '''
+            }
+        }
+    }
+}
