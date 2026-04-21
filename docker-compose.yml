@@ -5,8 +5,8 @@ services:
     image: mysql:8
     container_name: mysql-container
     environment:
-      MYSQL_ROOT_PASSWORD: sql123
-      MYSQL_DATABASE: studentdb
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "3307:3306"
     volumes:
@@ -16,7 +16,7 @@ services:
     image: amanrai3011/student-management-app:latest
     container_name: student-app
     environment:
-      MYSQL_ROOT_PASSWORD: sql123
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "5000:5000"
     depends_on:
